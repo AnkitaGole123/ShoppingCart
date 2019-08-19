@@ -18,4 +18,10 @@ public class ShoppingTest {
         int expected = 1;
         assertEquals(expected,productDetail.quantity);
     }
+    @Test
+    public void itShouldGiveTheCategoryOfProduct(){
+        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips");
+        String expected = "food";
+        assertEquals(expected,productDetail.category);
+    }
 }
