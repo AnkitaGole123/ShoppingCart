@@ -24,4 +24,10 @@ public class ShoppingTest {
         String expected = "food";
         assertEquals(expected,productDetail.category);
     }
+    @Test
+    public void itShouldGiveTheNameOfProduct(){
+        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips");
+        String expected = "chips";
+        assertEquals(expected,productDetail.name);
+    }
 }
