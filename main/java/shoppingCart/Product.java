@@ -5,19 +5,16 @@ import java.util.Objects;
 public class Product {
     public int quantity;
     public double price;
-    public String category;
     public String name;
     public boolean importedProduct;
+    boolean taxable;
 
-    public Product(int quantity, int price, String category, String name, boolean importedProduct) {
+    public Product(int quantity, int price, String name, boolean importedProduct,boolean taxable) {
         this.quantity = quantity;
         this.price = price;
-        this.category = category;
         this.name = name;
         this.importedProduct = importedProduct;
-    }
-    public double getPrice(double price, int quantity) {
-        return price * quantity;
+        this.taxable = taxable;
     }
 
     @Override
@@ -28,18 +25,17 @@ public class Product {
         return quantity == product.quantity &&
                 Double.compare(product.price, price) == 0 &&
                 importedProduct == product.importedProduct &&
-                Objects.equals(category, product.category) &&
+                taxable == product.taxable &&
                 Objects.equals(name, product.name);
     }
 
     @Override
     public String toString() {
-        return "Product{" +
-                "quantity=" + quantity +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                ", name='" + name + '\'' +
-                ", importedProduct=" + importedProduct +
-                '}';
+        return
+                " quantity=" + quantity +'\n' +
+                " price=" + price + '\n' +
+                " name='" + name + '\n' +
+                " importedProduct=" + importedProduct + '\n' +
+                " taxable=" + taxable;
     }
 }
