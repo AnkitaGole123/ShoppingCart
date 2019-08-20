@@ -1,7 +1,7 @@
 package shoppingCartTest;
 
 import org.junit.Test;
-import shoppingCart.ProductDetail;
+import shoppingCart.Product;
 import shoppingCart.Tax;
 
 import static org.junit.Assert.assertEquals;
@@ -9,25 +9,25 @@ import static org.junit.Assert.assertEquals;
 public class ShoppingTest {
     @Test
     public void itShouldGiveThePriceOfProduct(){
-        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips",true);
+        Product productDetail = new Product(1,20, "food", "chips",true);
         double expected = 20;
         assertEquals(expected,productDetail.price,1);
     }
     @Test
     public void itShouldGiveTheQuantityOfProduct(){
-        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips",false);
+        Product productDetail = new Product(1,20, "food", "chips",false);
         int expected = 1;
         assertEquals(expected,productDetail.quantity);
     }
     @Test
     public void itShouldGiveTheCategoryOfProduct(){
-        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips",true);
+        Product productDetail = new Product(1,20, "food", "chips",true);
         String expected = "food";
         assertEquals(expected,productDetail.category);
     }
     @Test
     public void itShouldGiveTheNameOfProduct(){
-        ProductDetail productDetail = new ProductDetail(1,20, "food", "chips",true);
+        Product productDetail = new Product(1,20, "food", "chips",true);
         String expected = "chips";
         assertEquals(expected,productDetail.name);
     }

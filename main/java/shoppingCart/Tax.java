@@ -1,15 +1,15 @@
 package shoppingCart;
 
 public class Tax {
+    final int salesTax = 10;
+    final double importTax = 5;
     public double getTax(double amount, boolean importedProduct) {
         if (importedProduct){
-            double importTax = 5;
             return (amount * importTax / 100);
 
         }else {
-            int salesTax = 10;
+            System.out.println(amount * salesTax/ 100);
             return (amount * salesTax / 100);
         }
     }
-
 }
