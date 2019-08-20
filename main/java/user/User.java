@@ -1,12 +1,12 @@
 package user;
 
-import shoppingCart.ProductDetail;
+import shoppingCart.AllProduct;
 
 public class User {
     public static void main(String[] args) {
+        AllProduct allProduct = new AllProduct();
+        allProduct.addProduct(2,20, "food", "chips",false);
 
-        ProductDetail productDetail = new ProductDetail(2,20, "food", "chips",false);
-        System.out.println(productDetail.getPrice());
-        System.out.println(productDetail.getSalesTax());
+        System.out.println(allProduct);
     }
 }

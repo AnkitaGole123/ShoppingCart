@@ -2,6 +2,7 @@ package shoppingCartTest;
 
 import org.junit.Test;
 import shoppingCart.ProductDetail;
+import shoppingCart.Tax;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,10 +33,17 @@ public class ShoppingTest {
     }
 
     @Test
-    public void itShouldGiveTheTax(){
-        ProductDetail productDetail = new ProductDetail(1,40, "food", "chips",true);
+    public void itShouldGiveTheSaleTax(){
+        Tax tax = new Tax();
+        double tax1 = tax.getTax(40, false);
         double expected = 4;
-        assertEquals(expected,productDetail.getSalesTax(),1);
+        assertEquals(expected,tax1,1);
     }
-
+    @Test
+    public void itShouldGiveTheImportTax(){
+        Tax tax = new Tax();
+        double tax1 = tax.getTax(40, true);
+        double expected = 2;
+        assertEquals(expected,tax1,1);
+    }
 }
