@@ -29,14 +29,14 @@ public class ShoppingTest {
     @Test
     public void itShouldGiveTheSaleTax(){
         Tax tax = new Tax();
-        double tax1 = tax.getTax(40, false,2);
+        double tax1 = tax.getTax(40, false,false);
         double expected = 8;
         assertEquals(expected,tax1,1);
     }
     @Test
     public void itShouldGiveTheImportTax(){
         Tax tax = new Tax();
-        double tax1 = tax.getTax(40, true,1);
+        double tax1 = tax.getTax(40, true,true);
         double expected = 2;
         assertEquals(expected,tax1,1);
     }
