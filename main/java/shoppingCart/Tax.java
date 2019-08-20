@@ -6,9 +6,7 @@ public class Tax {
     public double getTax(double amount, boolean importedProduct) {
         if (importedProduct){
             return (amount * importTax / 100);
-
         }else {
-            System.out.println(amount * salesTax/ 100);
             return (amount * salesTax / 100);
         }
     }

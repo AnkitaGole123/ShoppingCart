@@ -11,7 +11,6 @@ public class CheckCategory {
         if (exemptProducts.toString().contains(category)){
             return price;
         }
-        System.out.println( tax.getTax(price,importedProduct));
         return price + tax.getTax(price,importedProduct);
     }
 }
