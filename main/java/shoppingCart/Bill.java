@@ -8,12 +8,10 @@ public class Bill {
     double totalAmount = 0;
     double totalTax = 0;
     Tax tax = new Tax();
-    public void getBill(int quantity, int price, String name, boolean importedProduct, boolean taxable){
-        Product product = new Product(quantity,price,name,importedProduct,taxable);
+    public void getBill( int price, String name, boolean importedProduct, String category){
+        Product product = new Product(price,name,importedProduct,category);
         products.add(product);
-        totalTax+= tax.getTax(price,importedProduct,taxable);
-        totalAmount += product.price*quantity;
-        return;
+
     }
     public List<Product>getProducts(){
         return products;
