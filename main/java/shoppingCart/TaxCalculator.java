@@ -1,9 +1,10 @@
 package shoppingCart;
 
-public class Tax {
+public class TaxCalculator {
     final int SALESTAX = 10;
     final double IMPORTTAX = 5;
     private double tax = 0.0;
+
     public double getTax(double amount, boolean importedProduct,boolean taxable) {
         if (taxable) {
             if (importedProduct) {

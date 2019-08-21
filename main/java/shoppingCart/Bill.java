@@ -7,7 +7,7 @@ public class Bill {
     private List<Product> products = new ArrayList<>();
     double totalAmount = 0;
     double totalTax = 0;
-    Tax tax = new Tax();
+    TaxCalculator tax = new TaxCalculator();
     public void getBill( int price, String name, boolean importedProduct, String category){
         Product product = new Product(price,name,importedProduct,category);
         products.add(product);
