@@ -1,11 +1,13 @@
 package shoppingCart;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Cart {
-    public Map<Product, Integer> cart;
+   Map<Product, Integer> cart = new HashMap<>();
 
-    public Cart(Map<Product, Integer> cart) {
-        this.cart = cart;
+    public Map<Product, Integer> addCart(Product product, Integer quantity){
+        cart.put(product, quantity);
+        return cart;
     }
 }
