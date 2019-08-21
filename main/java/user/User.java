@@ -1,14 +1,14 @@
 package user;
 
-import shoppingCart.AddProduct;
+import shoppingCart.Bill;
 import shoppingCart.Product;
 
 public class User {
     public static void main(String[] args) {
-        AddProduct allProduct = new AddProduct();
-        allProduct.addProduct(2,20, "chips", false,false);
-        allProduct.addProduct(1,10, "CD", true,true);
-        allProduct.addProduct(3,5, "bucket", false,true);
+        Bill allProduct = new Bill();
+        allProduct.getBill(2,20, "chips", false,false);
+        allProduct.getBill(1,10, "CD", true,true);
+        allProduct.getBill(3,5, "bucket", false,true);
         for (Product product:allProduct.getProducts()){
             System.out.println(product);
         }

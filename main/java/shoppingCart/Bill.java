@@ -3,12 +3,12 @@ package shoppingCart;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddProduct {
+public class Bill {
     private List<Product> products = new ArrayList<>();
     double totalAmount = 0;
     double totalTax = 0;
     Tax tax = new Tax();
-    public void addProduct(int quantity, int price, String name, boolean importedProduct,boolean taxable){
+    public void getBill(int quantity, int price, String name, boolean importedProduct, boolean taxable){
         Product product = new Product(quantity,price,name,importedProduct,taxable);
         products.add(product);
         totalTax+= tax.getTax(price,importedProduct,taxable);
