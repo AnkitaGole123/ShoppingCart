@@ -2,11 +2,10 @@ package shoppingCartTest;
 
 import org.junit.Test;
 import shoppingCart.Product;
-import shoppingCart.TaxCalculator;
 
 import static org.junit.Assert.assertEquals;
 
-public class ShoppingTest {
+public class ProductTest {
     @Test
     public void itShouldGiveThePriceOfProduct(){
         Product productDetail = new Product(1,"fygh", false, "food");
