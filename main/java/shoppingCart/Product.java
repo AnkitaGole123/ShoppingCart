@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Product {
     public double price;
     public String name;
-     public boolean importedProduct;
+    public boolean importedProduct;
     String category;
 
     public Product(int price, String name, boolean importedProduct, String category) {

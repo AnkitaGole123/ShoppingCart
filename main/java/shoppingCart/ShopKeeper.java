@@ -8,5 +8,8 @@ public class ShopKeeper {
         cart.add(product,quantity);
         TaxCalculator taxCalculator = new TaxCalculator();
         taxCalculator.taxCalculation(cart);
+        Bill bill = new Bill();
+        bill.calculateAmount(taxCalculator);
+        bill.generateBill(cart);
     }
 }

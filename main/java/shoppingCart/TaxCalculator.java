@@ -5,10 +5,9 @@ import java.util.*;
 public class TaxCalculator {
     final int SALESTAX = 10;
     final double IMPORTTAX = 5;
-    List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
-
-    public Map<Product,Double> taxCalculation(Cart cart) {
-        Map<Product, Double> totalTax = new HashMap<>();
+    private List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
+   public Map<Product, Double> totalTax = new HashMap<>();
+    public void taxCalculation(Cart cart) {
         Map<Product, Integer> products = cart.getProducts();
         for (Map.Entry<Product, Integer> product: products.entrySet()) {
             double taxes = 0;
@@ -21,7 +20,6 @@ public class TaxCalculator {
             }
            totalTax.put(product.getKey(),taxes);
         }
-         return totalTax;
     }
 
     private double getPrice(Map.Entry<Product, Integer> product) {
@@ -30,5 +28,9 @@ public class TaxCalculator {
 
     public double getTax(double price, double taxRate){
         return price * taxRate / 100;
+    }
+
+    public Map<Product,Double> getBill() {
+        return totalTax;
     }
 }
