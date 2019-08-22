@@ -1,12 +1,19 @@
 package user;
 
-        import shoppingCart.Bill;
-        import shoppingCart.ShopKeeper;
+        import shoppingCart.Cart;
+        import shoppingCart.Product;
+        import shoppingCart.TaxCalculator;
+
+        import java.util.Map;
 
 public class Customer {
     public static void main(String[] args) {
-        Bill bill = new Bill();
-        ShopKeeper shopKeeper = new ShopKeeper();
-        shopKeeper.shopKepper(10,"chips","Food",2,true);
+        Product product = new Product("Chocolate",20,"FOOD",true);
+
+        Cart cart = new Cart();
+        cart.add(product,1);
+
+        TaxCalculator taxCalculator = new TaxCalculator();
+        
     }
 }

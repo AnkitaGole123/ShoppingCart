@@ -7,9 +7,10 @@ public class TaxCalculator {
     final double IMPORTTAX = 5;
     private List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
    public Map<Product, Double> totalTax = new HashMap<>();
-    public void taxCalculation(Cart cart) {
+    public Map<Product,Double> taxCalculation(Cart cart) {
         Map<Product, Integer> products = cart.getProducts();
         for (Map.Entry<Product, Integer> product: products.entrySet()) {
+
             double taxes = 0;
             double price = getPrice(product);
             if (product.getKey().importedProduct){
@@ -20,6 +21,7 @@ public class TaxCalculator {
             }
            totalTax.put(product.getKey(),taxes);
         }
+        return totalTax;
     }
 
     private double getPrice(Map.Entry<Product, Integer> product) {
@@ -30,7 +32,4 @@ public class TaxCalculator {
         return price * taxRate / 100;
     }
 
-    public Map<Product,Double> getBill() {
-        return totalTax;
-    }
 }
