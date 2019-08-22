@@ -5,14 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Bill {
-    private Map<Product, Double> totalAmount = new HashMap<>();
-    public void calculateAmount(TaxCalculator taxCalculator) {
-        double total;
-        for (Map.Entry<Product, Double> item : taxCalculator.getBill().entrySet()) {
-            total = item.getKey().price + item.getValue();
-            totalAmount.put(item.getKey(),total);
-        }
-    }
 
     public void generateBill(Cart cart){
         Map<String, String> receipt = new HashMap<>();

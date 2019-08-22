@@ -9,7 +9,6 @@ public class ShopKeeper {
         TaxCalculator taxCalculator = new TaxCalculator();
         taxCalculator.taxCalculation(cart);
         Bill bill = new Bill();
-        bill.calculateAmount(taxCalculator);
         bill.generateBill(cart);
     }
 }
