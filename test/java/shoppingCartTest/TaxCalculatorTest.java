@@ -14,11 +14,11 @@ public class TaxCalculatorTest {
     @Test
     public void itShouldGiveTax() {
         Map<Product, Integer> expected = new HashMap<>();
-        Product productDetail = new Product(1,"chips", false, "food");
+        Product productDetail = new Product("chocolate",10,"FOOD",false);
         Cart cart = new Cart();
         cart.add(productDetail,1);
         TaxCalculator taxCalculator = new TaxCalculator();
-        taxCalculator.taxCalculation(cart);
+        taxCalculator.calculate(cart);
         assertEquals(expected,taxCalculator);
     }
 }

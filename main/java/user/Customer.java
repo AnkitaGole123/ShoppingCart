@@ -1,24 +1,21 @@
 package user;
-import shoppingCart.Bill;
-import shoppingCart.Cart;
-import shoppingCart.Product;
-import shoppingCart.TaxCalculator;
-
-import java.util.Map;
+import shoppingCart.*;
 
 public class Customer {
     public static void main(String[] args) {
-        Product product1 = new Product("Chocolate",20,"FOOD",true);
-        Product product2 = new Product("ek tha kutta",10,"CD",false);
+        Product product1 = new Product("Chocolate",20, Category.FOOD,true);
+        Product product2 = new Product("ABCD",10,Category.OTHER,false);
+        Product product3 = new Product("Chips",15,Category.FOOD,false);
+        Product product4 = new Product("Java",150,Category.BOOK,false);
 
         Cart cart = new Cart();
         cart.add(product1,2);
         cart.add(product2,1);
-        TaxCalculator taxCalculator = new TaxCalculator();
-        Map<Product,Double> tax = taxCalculator.taxCalculation(cart);
+        cart.add(product3,5);
+        cart.add(product4,4);
 
-        Bill bill = new Bill();
-        bill.generateBill(tax,cart);
-        bill.printBill();
+        BillGenerator billGenerator = new BillGenerator(new TaxCalculator());
+        Bill bill = billGenerator.generateBill(cart);
+        bill.print();
     }
 }

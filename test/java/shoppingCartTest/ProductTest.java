@@ -8,16 +8,16 @@ import static org.junit.Assert.assertEquals;
 public class ProductTest {
     @Test
     public void itShouldGiveThePriceOfProduct(){
-        Product productDetail = new Product(1,"fygh", false, "food");
-        double expected = 1.0;
-        assertEquals(expected,productDetail.price,1);
+        Product productDetail = new Product("chocolate",10,"FOOD",false);
+        double expected = 10.0;
+        assertEquals(expected,productDetail.getPrice(),1);
     }
 
     @Test
     public void itShouldGiveTheNameOfProduct(){
-        Product productDetail = new Product(1,"chips", false, "food");
-        String expected = "chips";
-        assertEquals(expected,productDetail.name);
+        Product productDetail = new Product("chocolate",10,"FOOD",false);
+        String expected = "chocolate";
+        assertEquals(expected,productDetail.getName());
     }
 
 }

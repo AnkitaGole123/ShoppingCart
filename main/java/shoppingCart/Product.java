@@ -2,15 +2,15 @@ package shoppingCart;
 
 public class Product {
 
-    double price;
-    String name;
-    boolean importedProduct;
-    String category;
+    private double price;
+    private String name;
+    private boolean isImported;
+    private Category category;
 
-    public Product( String name,int price, String category, boolean importedProduct) {
+    public Product(String name, int price, Category category, boolean isImported) {
         this.price = price;
         this.name = name;
-        this.importedProduct = importedProduct;
+        this.isImported = isImported;
         this.category = category;
     }
     public double getPrice() {
@@ -21,11 +21,12 @@ public class Product {
         return name;
     }
 
-    public boolean isImportedProduct() {
-        return importedProduct;
+
+    public boolean isImported() {
+        return isImported;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 }

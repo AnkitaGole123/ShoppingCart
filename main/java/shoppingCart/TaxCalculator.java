@@ -6,30 +6,28 @@ public class TaxCalculator {
     final int SALESTAX = 10;
     final double IMPORTTAX = 5;
 
-    private List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
-   public Map<Product, Double> totalTax = new HashMap<>();
-    public Map<Product,Double> taxCalculation(Cart cart) {
-        Map<Product, Integer> products = cart.getProducts();
-        for (Map.Entry<Product, Integer> product: products.entrySet()) {
+    private List<Category> exemptedProducts = Arrays.asList(Category.BOOK, Category.MEDICAL, Category.FOOD);
 
-            double taxes = 0;
-            double price = getPrice(product);
-            if (product.getKey().importedProduct){
-                taxes+= getTax(price, IMPORTTAX);
-            }
-           else if (!exemptProduct.contains(product.getKey().category)){
-                taxes+=getTax(price,SALESTAX);
-            }
-           totalTax.put(product.getKey(),taxes);
+
+    public double calculate(CartItem cartItem) {
+        Product product = cartItem.getProduct();
+        double taxes = 0;
+        double price = getPrice(cartItem);
+        if (product.isImported()){
+            taxes+= getTax(price, IMPORTTAX);
         }
-        return totalTax;
+        else if (!exemptedProducts.contains(product.getCategory())){
+            taxes+=getTax(price,SALESTAX);
+        }
+
+        return taxes;
     }
 
-    private double getPrice(Map.Entry<Product, Integer> product) {
-       return product.getValue() * product.getKey().price;
+    private double getPrice(CartItem cartItem) {
+       return cartItem.getProduct().getPrice() * cartItem.getQuantity();
     }
 
-    public double getTax(double price, double taxRate){
+    private double getTax(double price, double taxRate){
         return price * taxRate / 100;
     }
 
