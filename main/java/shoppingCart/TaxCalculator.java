@@ -7,7 +7,7 @@ public class TaxCalculator {
     final double IMPORTTAX = 5;
     List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
 
-    public Map<Product,Double> getTotalTax(Cart cart) {
+    public Map<Product,Double> taxCalculation(Cart cart) {
         Map<Product, Double> totalTax = new HashMap<>();
         Map<Product, Integer> products = cart.getProducts();
         for (Map.Entry<Product, Integer> product: products.entrySet()) {

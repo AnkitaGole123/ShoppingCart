@@ -7,6 +7,6 @@ public class ShopKeeper {
         Cart cart = new Cart();
         cart.add(product,quantity);
         TaxCalculator taxCalculator = new TaxCalculator();
-        taxCalculator.getTotalTax(cart);
+        taxCalculator.taxCalculation(cart);
     }
 }
