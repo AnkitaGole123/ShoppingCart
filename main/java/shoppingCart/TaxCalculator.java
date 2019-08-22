@@ -5,6 +5,7 @@ import java.util.*;
 public class TaxCalculator {
     final int SALESTAX = 10;
     final double IMPORTTAX = 5;
+
     private List<String> exemptProduct = Arrays.asList("FOOD", "BOOK", "MEDICAL");
    public Map<Product, Double> totalTax = new HashMap<>();
     public Map<Product,Double> taxCalculation(Cart cart) {

@@ -2,9 +2,9 @@ package shoppingCart;
 
 public class Product {
 
-    public double price;
-    public String name;
-    public boolean importedProduct;
+    double price;
+    String name;
+    boolean importedProduct;
     String category;
 
     public Product( String name,int price, String category, boolean importedProduct) {

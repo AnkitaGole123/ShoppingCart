@@ -35,11 +35,10 @@ public class Bill {
     public void printBill(){
         for (Map<String, String> aReceipt : this.bill){
             for (Map.Entry<String, String> item : aReceipt.entrySet()){
-                System.out.print(item.getKey() + " - " + item.getValue() + " ");
+                System.out.print(item.getKey() +  " = " + item.getValue() + " " + "\n" );
             }
-            System.out.println("\n");
         }
-        System.out.println("SalesTax - " + this.totalTaxAmount);
-        System.out.println("TotalAmount - " + this.totalAllItemsCostAmount);
+        System.out.println("SalesTax = " + this.totalTaxAmount);
+        System.out.println("TotalAmount = " + this.totalAllItemsCostAmount);
     }
 }
