@@ -3,8 +3,8 @@ package shoppingCart;
 import java.util.*;
 
 public class TaxCalculator {
-    final int SALESTAX = 10;
-    final double IMPORTTAX = 5;
+    final int SALE_TAX = 10;
+    final double IMPORT_TAX = 5;
 
     private List<Category> exemptedProducts = Arrays.asList(Category.BOOK, Category.MEDICAL, Category.FOOD);
 
@@ -14,10 +14,10 @@ public class TaxCalculator {
         double taxes = 0;
         double price = getPrice(cartItem);
         if (product.isImported()){
-            taxes+= getTax(price, IMPORTTAX);
+            taxes+= getTax(price, IMPORT_TAX);
         }
         if (!exemptedProducts.contains(product.getCategory())){
-            taxes+=getTax(price,SALESTAX);
+            taxes+=getTax(price, SALE_TAX);
         }
 
         return taxes;
