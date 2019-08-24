@@ -21,7 +21,6 @@ public class Product {
         return name;
     }
 
-
     public boolean isImported() {
         return isImported;
     }

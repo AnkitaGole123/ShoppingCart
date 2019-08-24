@@ -16,7 +16,7 @@ public class TaxCalculator {
         if (product.isImported()){
             taxes+= getTax(price, IMPORTTAX);
         }
-        else if (!exemptedProducts.contains(product.getCategory())){
+        if (!exemptedProducts.contains(product.getCategory())){
             taxes+=getTax(price,SALESTAX);
         }
 
