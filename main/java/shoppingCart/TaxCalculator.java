@@ -12,7 +12,7 @@ public class TaxCalculator {
     public double calculate(CartItem cartItem) {
         Product product = cartItem.getProduct();
         double taxes = 0;
-        double price = getPrice(cartItem);
+        double price = cartItem.getPrice();
         if (product.isImported()){
             taxes+= getTax(price, IMPORT_TAX);
         }
@@ -21,10 +21,6 @@ public class TaxCalculator {
         }
 
         return taxes;
-    }
-
-    private double getPrice(CartItem cartItem) {
-       return cartItem.getProduct().getPrice() * cartItem.getQuantity();
     }
 
     private double getTax(double price, double taxRate){
